@@ -477,9 +477,9 @@ def macd(df,fast_period=12,slow_period=26,signal_period=9,column=None,include=Tr
 		def __macd(s,periods):
 			macd_f=[]
 			factor=2.0/(periods+1)
-			macd_f.append(s[0])
+			macd_f.append(s.iloc[0])
 			for i in range(1,len(s)):
-				macd_f.append(s[i]*factor+macd_f[i-1]*(1-factor))
+				macd_f.append(s.iloc[i]*factor+macd_f[i-1]*(1-factor))
 			return pd.Series(macd_f,index=s.index)
 		_df['FAST']=__macd(df[column],fast_period)
 		_df['SLOW']=__macd(df[column],slow_period)
