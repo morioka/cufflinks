@@ -1058,7 +1058,7 @@ class QuantFig(object):
 
 			for i in range(len(base)):
 				if i != 0:
-					if base[i] > base[i-1]:
+					if base.iloc[i] > base.iloc[i-1]:
 						bar_colors.append(up_color)
 					else:
 						bar_colors.append(down_color)
