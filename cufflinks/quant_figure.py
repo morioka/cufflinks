@@ -14,7 +14,7 @@ Try it out:
 
 from __future__ import absolute_import
 
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 import json
 import copy
 import pandas as pd

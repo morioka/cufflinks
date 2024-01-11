@@ -3,7 +3,7 @@ import time
 import copy
 import numpy as np
 # from plotly.graph_objs import *
-from plotly.graph_objs import Figure, Layout, Bar, Box, Scatter, FigureWidget, Scatter3d, Histogram, Heatmap, Surface, Pie
+from plotly.graph_objects import Figure, Layout, Bar, Box, Scatter, FigureWidget, Scatter3d, Histogram, Heatmap, Surface, Pie
 import plotly.figure_factory as ff
 from collections import defaultdict
 from IPython.display import display,Image

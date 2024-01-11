@@ -20,7 +20,7 @@ from . import themes
 
 from .helper import _printer as help
 from .plotlytools import *
-from plotly.graph_objs import *
+from plotly.graph_objects import *
 from .colors import cnames, get_colorscale
 from .utils import pp
 from .tools import subplots,scatter_matrix,figures,getLayout,getThemes,getTheme

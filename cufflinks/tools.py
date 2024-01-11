@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import plotly.offline as py_offline
 import plotly.figure_factory as ff
-from plotly.graph_objs import Figure, Scatter, Line
+from plotly.graph_objects import Figure, Scatter, Line
 from plotly.subplots import make_subplots
 # from plotly.graph_objs.layout import XAxis, YAxis
 
