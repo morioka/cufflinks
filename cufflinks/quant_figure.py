@@ -18,6 +18,7 @@ import plotly.graph_objs as go
 import json
 import copy
 import pandas as pd
+from functools import reduce
 
 from .plotlytools import iplot as pt_iplot
 from . import tools
