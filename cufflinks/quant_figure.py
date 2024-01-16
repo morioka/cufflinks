@@ -585,7 +585,7 @@ class QuantFig(object):
 			n+=1
 		self.studies[id]=study
 	   
-	def add_volume(self,colorchange=True,column=None,name='',str='{name}', text=None, **kwargs):
+	def add_volume(self,colorchange=True,column=None,name='',str='{name}', hovertext=None, **kwargs):
 		"""
 		Add 'volume' study to QuantFigure.studies
 
@@ -629,8 +629,7 @@ class QuantFig(object):
 			   'name':name,
 			   'params':{'colorchange':colorchange,'base':'close','column':column,
 						 'str':None,
-						 'text': text},
-#						 'str':None},
+						 'hovertext': hovertext},
 			  'display':utils.merge_dict({'up_color':up_color,'down_color':down_color},kwargs)}
 		self._add_study(study)
 
@@ -1068,8 +1067,12 @@ class QuantFig(object):
 				else:
 					bar_colors.append(down_color)
 			fig=df[params['column']].figure(kind='bar',theme=params['theme'],**kwargs)
-			fig['data'][0].update(marker=dict(color=bar_colors,line=dict(color=bar_colors)),
-					  opacity=0.8, text=params['text'])
+			if params['hovertext'] is None:
+				fig['data'][0].update(marker=dict(color=bar_colors,line=dict(color=bar_colors)),
+						opacity=0.8)
+			else:
+				fig['data'][0].update(marker=dict(color=bar_colors,line=dict(color=bar_colors)),
+						  opacity=0.8, hoverinfo="text", hovertext=params['hovertext'])
 
 		if kind in ('sma','ema','atr','adx','dmi','ptps'):
 			local_kwargs,params=get_params([],params,display)
